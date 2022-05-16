@@ -1,24 +1,63 @@
-import logo from './logo.svg';
-import './App.css';
+import styled, { createGlobalStyle } from "styled-components";
+import Hero from "./sections/Hero";
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+ 
+html {
+  scrollbar-width: none;
+  scroll-behavior:smooth;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+
+}
+  body{
+    
+    background: #121212;
+    color: #fff ;
+    font-family: Kanit;
+  }
+`;
+
+
+const  Main = styled.main`
+max-width: 1100px ;
+margin: 0 auto;
+padding-top: 70px ;
+ height: 100vh;
+ width: 100vw;
+
+ display: grid ;
+ grid-template-columns: 1fr 1fr ;
+ grid-column-gap: 2rem;
+
+ @media (max-width: 990px)  {
+  grid-template-columns: 1fr ;
+  grid-template-rows: 40vh auto ;
+  grid-row-gap: 4rem ;
+
+
+}
+@media (max-width: 490px) {
+  grid-template-rows: 50vh auto;
+}
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <GlobalStyle />
+      <Main>
+          <Hero />
+      </Main>
+        
+    </>
   );
 }
 
