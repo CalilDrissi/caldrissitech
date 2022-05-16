@@ -198,13 +198,13 @@ const Hero = () => {
           </div>
    
         <Tabs>
-        <Scrollspy items={['section1', 'section2']}  currentClassName="active">
+        <Scrollspy items={['section1', 'section2', 'section3']}  currentClassName="active">
 
-        <div> <a  href="#section1">01. Most Recent Projects</a></div>
+        <div> <a  href="#section1">01. Featured Projects</a></div>
     
-       <div> <a href="#section1">02.  Older Projects</a></div>
+       <div> <a href="#section2">02.  Recent Projects</a></div>
 
-       <div> <a href="#section3">03.  Tech Posts</a></div>
+       <div> <a href="#section3">03.  Tech Articles</a></div>
 
         </Scrollspy>
   

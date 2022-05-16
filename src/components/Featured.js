@@ -43,9 +43,6 @@ const Check = styled.div`
     
 `
 
-
-
-
 const Stack = styled.div`
 display:  flex;
 justify-content: space-space-evenly ;

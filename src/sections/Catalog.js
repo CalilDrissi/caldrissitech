@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import Featured from '../components/Featured'
 import Recent from '../components/Recent'
-
+import Post from '../components/Post'
 
 const Container = styled.div`
 /* this need pseud element after */
@@ -83,7 +83,7 @@ const Catalog = () => {
             </BoxRec>
 
             <HeadingCat> Older Projects  </HeadingCat>
-            <BoxSquare   id="section2">
+            <BoxSquare   id="section2" >
                     <Recent title="coll" type="desktop" />
                     <Recent title="coll" type="desktop" />
                     <Recent title="coll" type="desktop" />
@@ -96,6 +96,13 @@ const Catalog = () => {
                     <Recent title="coll" type="desktop" />
                     <Recent title="coll" type="desktop" />
             </BoxSquare>
+
+            <BoxRec id="section3">
+                <Post />
+                <Post />
+                <Post />
+            </BoxRec>
+
 
             <footer style={{marginTop:"30px" , marginLeft: "5px", fontWeight: "100"}}> Calil Drissi@ 2022</footer>
     </Container>
