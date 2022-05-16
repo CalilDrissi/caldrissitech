@@ -75,7 +75,7 @@ const Tabs = styled.nav`
 
       font-weight: 100 ;
       & div a{
-        cursor: pointer !important;
+        cursor: default !important;
       }
       & div.active {
            font-size: 20px;
@@ -104,11 +104,12 @@ const Photo = styled.div`
 const ProfileImg = styled.img`
     max-width: 100%;
     height: auto ;
-    filter: grayscale(100%);
-    transition: all .2s ease-in ;
+    filter:  grayscale(100%);
+
+    transition: all .4s ease-in ;
 
      &:hover {
-      filter: grayscale(0%);
+      filter:  grayscale(0%) ;
       transform: scale(1.05) ;
 }
 `
@@ -133,7 +134,7 @@ const TooltipText = styled.span`
 `;
 const TooltipBox = styled.span`
   position: absolute;
-  top: calc(70% + 10px);
+  top: calc(100% + 10px);
   left: 30px;
   visibility: hidden;
   color: transparent;
@@ -202,7 +203,9 @@ const Hero = () => {
         <div> <a  href="#section1">01. Most Recent Projects</a></div>
     
        <div> <a href="#section1">02.  Older Projects</a></div>
-        {/* For Version 2.0 <p>03---Tech Articles</p> */}
+
+       <div> <a href="#section3">03.  Tech Posts</a></div>
+
         </Scrollspy>
   
         </Tabs>
