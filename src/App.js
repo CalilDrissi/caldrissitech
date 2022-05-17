@@ -2,6 +2,7 @@ import styled, { createGlobalStyle } from "styled-components";
 import Hero from "./sections/Hero";
 import Catalog from "./sections/Catalog";
 
+
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -61,12 +62,18 @@ padding-top: 70px ;
 `
 
 function App() {
+
+ 
+
   return (
     <>
     <GlobalStyle />
       <Main>
+       
           <Hero />
           <Catalog />
+
+  
       </Main>
        
     </>

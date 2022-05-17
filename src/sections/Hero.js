@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import { GithubOriginalIcon,  TwitterOriginalIcon} from "react-devicons";
 import Scrollspy from 'react-scrollspy';
 import  profile from "../assets/3.jpeg";
+import Pop from "../components/Pop";
+import {useState} from "react";
 
 const Container = styled.div`
  cursor: default ;
@@ -75,7 +77,7 @@ const Tabs = styled.nav`
 
       font-weight: 100 ;
       & div a{
-        cursor: default !important;
+        cursor: pointer !important;
       }
       & div.active {
            font-size: 20px;
@@ -174,10 +176,12 @@ const TooltipCard = styled.span`
 
 
 const Hero = () => {
+
+  const [openPop, setOpenPop] = useState(false);
   return (
     <>
     <Container>
-
+   
           <div>
           <Heading6 >Hi, my name is</Heading6>
       <Heading>
@@ -225,8 +229,10 @@ const Hero = () => {
           <span>  Github</span>
               
           </SocialLink>
+      
         </Connect>
-
+        {openPop && <Pop closePop={setOpenPop} />}
+        <button onClick={()=>{setOpenPop(true)}}> Contact me </button>
     </Container>
     </>
   )

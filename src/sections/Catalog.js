@@ -38,7 +38,7 @@ const  BoxSquare = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
 justify-items: stretch ;
-grid-gap: 1rem ;
+grid-gap: 10px ;
 margin-top: 3rem ;
 margin-bottom: 20px ;
 
@@ -104,7 +104,7 @@ const Catalog = () => {
             </BoxRec>
 
 
-            <footer style={{marginTop:"30px" , marginLeft: "5px", fontWeight: "100"}}> Calil Drissi@ 2022</footer>
+            <footer style={{marginTop:"30px" , marginLeft: "5px", fontWeight: "100" , fontSize:"12px" , marginBottom:"1rem"}}> Calil Drissi@ 2022</footer>
     </Container>
   )
 }
