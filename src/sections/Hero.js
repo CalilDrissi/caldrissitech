@@ -1,130 +1,128 @@
-import styled from 'styled-components';
-import { GithubOriginalIcon,  TwitterOriginalIcon} from "react-devicons";
-import Scrollspy from 'react-scrollspy';
-import  profile from "../assets/3.jpeg";
+import styled from "styled-components";
+import { GithubOriginalIcon, TwitterOriginalIcon } from "react-devicons";
+import Scrollspy from "react-scrollspy";
+import profile from "../assets/3.jpeg";
+import { MdOutlineAlternateEmail } from "react-icons/md";
 import Pop from "../components/Pop";
-import {useState} from "react";
+import { useState } from "react";
 
 const Container = styled.div`
- cursor: default ;
-      width:  clamp(30vw,550px, 550px);
-       position: fixed;
-       padding-left: 22px ;
-      height: 80vh;
-      display: flex ;
-      flex-direction: column ;
-      justify-content: space-between ;
-       @media (max-width: 990px) {
-            position: relative;
-            width: 100% ;
-            padding: 0 10%;
-            height: 40vh ;
-            & nav {
-                  display: none ;
-            }
-      }
-            @media (max-width: 490px) {
-            position: relative;
-            width: 100% ;
-            padding: 0 10%;
-            height: 50vh ;
-            & nav {
-                  display: none ;
-            }
-      }
+  cursor: default;
+  width: clamp(30vw, 550px, 550px);
+  position: fixed;
+  padding-left: 22px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (max-width: 990px) {
+    position: relative;
+    width: 100%;
+    padding: 0 10%;
+    height: 40vh;
+    & nav {
+      display: none;
+    }
+  }
+  @media (max-width: 490px) {
+    position: relative;
+    width: 100%;
+    padding: 0 10%;
+    height: 50vh;
+    & nav {
+      display: none;
+    }
+  }
 
-      &  a:link,
-           a:visited,
-           a:hover,
-           a:active{
-           color: #fff;
-            text-decoration: none;
-            cursor: auto;
-      }
-`
+  & a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: #fff;
+    text-decoration: none;
+    cursor: auto;
+  }
+`;
 
 const Heading = styled.h1`
-    font-size: 70px;
-    font-weight: 900;
-    line-height: 1.05 ;
-    cursor: default ;
-    @media (max-width: 500px) {
-          font-size: 50px ;
-    }
-`
+  font-size: 70px;
+  font-weight: 900;
+  line-height: 1.05;
+  cursor: default;
+  @media (max-width: 500px) {
+    font-size: 50px;
+  }
+`;
 
-const  Part1 = styled.div`
-display: block ;
-font-size: 32px ;
-font-weight: 200 ;
-line-height: 1.05 ;
-`
+const Part1 = styled.div`
+  display: block;
+  font-size: 32px;
+  font-weight: 200;
+  line-height: 1.05;
+`;
 
-const  Part2 = styled.div`
-display: block ;
-font-size: 22px ;
-font-weight: 100 ;
-padding-top: 32px ;
-`
+const Part2 = styled.div`
+  display: block;
+  font-size: 22px;
+  font-weight: 100;
+  padding-top: 32px;
+`;
 
 const Heading6 = styled.h6`
-      font-weight: 100 ;
-      line-height: 1.1 ;
-      font-size: 16px ;
-`
+  font-weight: 100;
+  line-height: 1.1;
+  font-size: 16px;
+`;
 
 const Tabs = styled.nav`
-
-      font-weight: 100 ;
-      & div a{
-        cursor: pointer !important;
-      }
-      & div.active {
-           font-size: 20px;
-           font-weight: 700 ;
-      }
-`
+  font-weight: 100;
+  & div a {
+    cursor: pointer !important;
+  }
+  & div.active {
+    font-size: 20px;
+    font-weight: 700;
+  }
+`;
 const Connect = styled.div`
-      display: flex;
-      gap: 20px;
-      align-items: center ;
-      cursor: pointer;
-      font-weight: 100 ;
-
-`
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 100;
+`;
 const Photo = styled.div`
-      width: 50px;
-      height: 50px;
-      background: #eee ;
-      border-radius: 50% ;
-      cursor: auto;
-      overflow: clip;
-      padding-top: 1px ;
-      border-style: none;
-
-` 
+  width: 50px;
+  height: 50px;
+  background: #eee;
+  border-radius: 50%;
+  cursor: auto;
+  overflow: clip;
+  padding-top: 1px;
+  border-style: none;
+`;
 const ProfileImg = styled.img`
-    max-width: 100%;
-    height: auto ;
-    filter:  grayscale(100%);
+  max-width: 100%;
+  height: auto;
+  filter: grayscale(100%);
 
-    transition: all .4s ease-in ;
+  transition: all 0.4s ease-in;
 
-     &:hover {
-      filter:  grayscale(0%) ;
-      transform: scale(1.05) ;
-}
-`
+  &:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+`;
 
 const SocialLink = styled.p`
-   text-decoration: none ;
-   margin-left: 5px ;
-   transition: all .2s ease-out ;
-   &:hover{
-         text-decoration: underline ;
-            opacity: .5 ;
-   }
-`
+  text-decoration: none;
+  margin-left: 5px;
+  transition: all 0.2s ease-out;
+  &:hover {
+    text-decoration: underline;
+    opacity: 0.5;
+  }
+`;
 
 const TooltipText = styled.span`
   color: #fff;
@@ -174,68 +172,82 @@ const TooltipCard = styled.span`
   }
 `;
 
+const OpenPopup = styled.button`
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+  display: block;
+`;
 
 const Hero = () => {
-
   const [openPop, setOpenPop] = useState(false);
   return (
     <>
-    <Container>
-   
-          <div>
-          <Heading6 >Hi, my name is</Heading6>
-      <Heading>
-      <TooltipCard>
-        <TooltipText>
-        <span>Calil</span>
-        </TooltipText>
-        <TooltipBox>
-          <p>خليل</p>
-        </TooltipBox>
-      </TooltipCard>
-        <span> Drissi</span>
-       </Heading>
-        <Part1>I Develop Computer Software.</Part1>
-        <Part2>I'm a software engineer specializing in building and designing
-        exceptional digital experiences.</Part2>
+      <Container>
+        <div>
+          <Heading6>Hi, my name is</Heading6>
+          <Heading>
+            <TooltipCard>
+              <TooltipText>
+                <span>Calil</span>
+              </TooltipText>
+              <TooltipBox>
+                <p>خليل</p>
+              </TooltipBox>
+            </TooltipCard>
+            <span> Drissi</span>
+          </Heading>
+          <Part1>I Develop Computer Software.</Part1>
+          <Part2>
+            I'm a software engineer specializing in building and designing
+            exceptional digital experiences.
+          </Part2>
+        </div>
 
-          </div>
-   
         <Tabs>
-        <Scrollspy items={['section1', 'section2', 'section3']}  currentClassName="active">
+          <Scrollspy
+            items={["section1", "section2", "section3"]}
+            currentClassName="active"
+          >
+            <div>
+              {" "}
+              <a href="#section1">01. Featured Projects</a>
+            </div>
 
-        <div> <a  href="#section1">01. Featured Projects</a></div>
-    
-       <div> <a href="#section2">02.  Recent Projects</a></div>
+            <div>
+              {" "}
+              <a href="#section2">02. Recent Projects</a>
+            </div>
 
-       <div> <a href="#section3">03.  Tech Articles</a></div>
-
-        </Scrollspy>
-  
+            <div>
+              {" "}
+              <a href="#section3">03. Tech Articles</a>
+            </div>
+          </Scrollspy>
         </Tabs>
-      
 
         <Connect>
           <Photo>
-            < ProfileImg  src={profile} alt="me" />
+            <ProfileImg src={profile} alt="me" />
           </Photo>
           <SocialLink>
-          <TwitterOriginalIcon size="14px" color="white" />
-                <span> Twitter</span>
-          
+            <TwitterOriginalIcon size="14px" color="white" />
+            <span> Twitter</span>
           </SocialLink>
           <SocialLink>
-          <GithubOriginalIcon size="15px" color="white" />
-          <span>  Github</span>
-              
+            <GithubOriginalIcon size="15px" color="white" />
+            <span> Github</span>
           </SocialLink>
-      
+
+          <SocialLink onClick={() => setOpenPop(true)}>
+            <MdOutlineAlternateEmail size="15px" />
+            <span> Message Me</span>
+          </SocialLink>
         </Connect>
         {openPop && <Pop closePop={setOpenPop} />}
-        <button onClick={()=>{setOpenPop(true)}}> Contact me </button>
-    </Container>
+      </Container>
     </>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
