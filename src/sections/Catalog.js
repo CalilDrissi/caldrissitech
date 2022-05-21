@@ -45,7 +45,7 @@ const BoxSquare = styled.div`
 const BoxRec = styled.div`
   width: 100%;
   display: flex;
-  gap: 16px;
+  gap: 14px;
   flex-direction: column;
   &:hover > div:not(:hover) {
     opacity: 0.5;
@@ -85,9 +85,9 @@ const Catalog = () => {
       </BoxSquare>
 
       <BoxRec id="section3">
-        <Post />
-        <Post />
-        <Post />
+        <Post title="Scaling" platform="Dev.to" />
+        <Post title="Scaling" platform="Medium" />
+        <Post title="Scaling" platform="Medium" />
       </BoxRec>
 
       <footer

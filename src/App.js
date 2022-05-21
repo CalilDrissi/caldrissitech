@@ -2,7 +2,6 @@ import styled, { createGlobalStyle } from "styled-components";
 import Hero from "./sections/Hero";
 import Catalog from "./sections/Catalog";
 
-
 const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -31,45 +30,35 @@ body::-webkit-scrollbar {
 
 `;
 
+const Main = styled.main`
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 60px;
+  height: 100vh;
+  width: 100vw;
 
-const  Main = styled.main`
-max-width: 1100px ;
-margin: 0 auto;
-padding-top: 70px ;
- height: 100vh;
- width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 2rem;
 
- display: grid ;
- grid-template-columns: 1fr 1fr ;
- grid-column-gap: 2rem;
-
- @media (max-width: 990px)  {
-  grid-template-columns: 1fr ;
-  grid-template-rows: 40vh auto ;
-  grid-row-gap: 4rem ;
-
-
-}
-@media (max-width: 490px) {
-  grid-template-rows: 50vh auto;
-}
-`
+  @media (max-width: 990px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 40vh auto;
+    grid-row-gap: 4rem;
+  }
+  @media (max-width: 490px) {
+    grid-template-rows: 50vh auto;
+  }
+`;
 
 function App() {
-
- 
-
   return (
     <>
-    <GlobalStyle />
+      <GlobalStyle />
       <Main>
-       
-          <Hero />
-          <Catalog />
-
-  
+        <Hero />
+        <Catalog />
       </Main>
-       
     </>
   );
 }
