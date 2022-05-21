@@ -79,7 +79,9 @@ const Catalog = () => {
         <Recent title="coll" type="desktop" />
         <Recent title="coll" type="desktop" />
         <Recent title="coll" type="desktop" />
-        <Recent title="coll" type="desktop" />
+        <Recent title="coll" type="Android" />
+        <Recent title="coll" type="Full-Stack" />
+        <Recent title="coll" type="Front-End" />
       </BoxSquare>
 
       <BoxRec id="section3">
@@ -98,7 +100,7 @@ const Catalog = () => {
         }}
       >
         {" "}
-        Calil Drissi@ 2022
+        <p>Calil Drissi &copy; 2022</p>
       </footer>
     </Container>
   );

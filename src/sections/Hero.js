@@ -172,13 +172,6 @@ const TooltipCard = styled.span`
   }
 `;
 
-const OpenPopup = styled.button`
-  width: 80px;
-  height: 40px;
-  cursor: pointer;
-  display: block;
-`;
-
 const Hero = () => {
   const [openPop, setOpenPop] = useState(false);
   return (
