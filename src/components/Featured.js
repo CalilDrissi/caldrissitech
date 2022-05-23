@@ -101,8 +101,10 @@ const HeadingSix = styled.h6`
 const Featured = ({ type, title }) => {
   return (
     <Box>
-      <Heading5>{type}</Heading5>
-      <HeadingSecondary>{title}</HeadingSecondary>
+      <HeadingSecondary>
+        <Heading5>{type}</Heading5>
+        {title}
+      </HeadingSecondary>
       <div></div>
       <Body>
         Web app for building schools & linking people together,teachers,
@@ -137,7 +139,7 @@ height="2000px" width="1000px" ></iframe>
             </FrameDiv>
         */}
           <span> &nbsp; </span>
-          <Linky style={{ marginLeft: "10px" }}>
+          <Linky style={{ marginLeft: "5px" }}>
             <BsDoorOpen style={{ marginRight: "2px" }} />
             Open
           </Linky>
