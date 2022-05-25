@@ -11,7 +11,7 @@ const Box = styled.div`
   overflow-y: hidden;
   width: 100%;
   height: 210px;
-  padding: 20px 20px 5px 20px;
+  padding: 25px 25px 5px 25px;
   background: #202020;
   flex-grow: stretch;
   transition: all 0.2s ease-out;

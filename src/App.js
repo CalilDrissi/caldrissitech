@@ -1,6 +1,8 @@
 import styled, { createGlobalStyle } from "styled-components";
 import Hero from "./sections/Hero";
 import Catalog from "./sections/Catalog";
+import Pop from "./components/Pop";
+import { useState } from "react";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -52,11 +54,14 @@ const Main = styled.main`
 `;
 
 function App() {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <GlobalStyle />
+      {open && <Pop closePop={setOpen} />}
       <Main>
-        <Hero />
+        <Hero openIt={setOpen} />
         <Catalog />
       </Main>
     </>

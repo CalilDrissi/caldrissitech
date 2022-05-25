@@ -3,8 +3,7 @@ import { GithubOriginalIcon, TwitterOriginalIcon } from "react-devicons";
 import Scrollspy from "react-scrollspy";
 import profile from "../assets/3.jpeg";
 import { MdOutlineAlternateEmail } from "react-icons/md";
-import Pop from "../components/Pop";
-import { useState } from "react";
+
 
 const Container = styled.div`
   cursor: default;
@@ -172,8 +171,7 @@ const TooltipCard = styled.span`
   }
 `;
 
-const Hero = () => {
-  const [openPop, setOpenPop] = useState(false);
+const Hero = ({openIt}) => {
   return (
     <>
       <Container>
@@ -232,12 +230,11 @@ const Hero = () => {
             <span> Github</span>
           </SocialLink>
 
-          <SocialLink onClick={() => setOpenPop(true)}>
+          <SocialLink onClick={() => { openIt(true)}}>
             <MdOutlineAlternateEmail size="15px" />
             <span> Message Me</span>
           </SocialLink>
         </Connect>
-        {openPop && <Pop closePop={setOpenPop} />}
       </Container>
     </>
   );
