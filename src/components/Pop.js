@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { createPortal } from "react-dom";
-import React, { ChangeEvent, FormEvent, useRef, useState } from "react";
+import React, {  useRef, useState } from "react";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -30,9 +30,9 @@ const Box = styled.div`
 
 const Pop = ({ closePop }) => {
 
-  const formId = "";
+  const formId = "auQtBhSs";
   const formSparkUrl = `https://submit-form.com/${formId}`;
-  const recaptchaKey = "";
+  const recaptchaKey = "6LcbVh4gAAAAAAxOVnbvLl_ie-MbG8vKeeM6jvuu";
   const recaptchaRef = useRef();
 
   const initialFormState = {
@@ -42,6 +42,7 @@ const Pop = ({ closePop }) => {
   };
 
   const [formState, setFormState] = useState(initialFormState);
+
   const [submitting, setSubmitting] = useState(false);
   const [message, setMessage] = useState();
   const [recaptchaToken, setReCaptchaToken] = useState();
@@ -63,7 +64,6 @@ const Pop = ({ closePop }) => {
       const result = await axios.post(formSparkUrl, payload);
       console.log(result);
       setMessage({
-        class: "bg-green-500",
         text: "Thanks, someone will be in touch shortly.",
       });
       setFormState(initialFormState);
@@ -71,12 +71,13 @@ const Pop = ({ closePop }) => {
     } catch (error) {
       console.log(error);
       setMessage({
-        class: "bg-red-500",
         text: "Sorry, there was a problem. Please try again or contact support.",
       });
     }
   };
 
+
+  // keep this snippet for handling onChange in form inputs
   const updateFormControl = (event) => {
     const { id, value } = event.target;
     const key = id;
@@ -100,19 +101,49 @@ const Pop = ({ closePop }) => {
         >
           X
         </button>
+        {message && (
+          <div>
+            {message.text}
+          </div>)}
         <h1>Leave me a Message</h1>
-        <form>
-          <input
-            style={{ display: "block" }}
-            type="email"
-            placeholder="email"
+        <form onSubmit={submitForm}>
+        <div>
+            <label htmlFor="name">Name</label>
+            <input
+              onChange={updateFormControl}
+              type="text"
+              id="name"
+              value={formState.name}
+            />
+          </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input
+              onChange={updateFormControl}
+              type="email"
+              id="email"
+              value={formState.email}
+            />
+          </div>
+          <div>
+            <label htmlFor="message">Message</label>
+            <textarea
+              onChange={updateFormControl}
+              id="message"
+              value={formState.message}
+            ></textarea>
+          </div>
+
+          <ReCAPTCHA
+            ref={recaptchaRef}
+            sitekey={recaptchaKey}
+            onChange={updateRecaptchaToken}
           />
-          <input style={{ display: "block" }} type="text" placeholder="name" />
-          <textarea style={{ display: "block" }}>
-            {" "}
-            write your message here
-          </textarea>
-          <button>Send</button>
+          <button
+            disabled={submitting}
+          >
+            {submitting ? "Submitting..." : "Submit"}
+          </button>
         </form>
       </Box>
     </Popup>,
