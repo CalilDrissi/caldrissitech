@@ -232,7 +232,7 @@ const Hero = ({openIt}) => {
 
           <SocialLink onClick={() => { openIt(true)}}>
             <MdOutlineAlternateEmail size="15px" />
-            <span> Message Me</span>
+            <span> Contact</span>
           </SocialLink>
         </Connect>
       </Container>
