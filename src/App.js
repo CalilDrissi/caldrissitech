@@ -26,9 +26,6 @@ body::-webkit-scrollbar {
     background: #121212;
     color: #fff ;
     font-family: Kanit;
-
-   
- 
   }
 
 `;

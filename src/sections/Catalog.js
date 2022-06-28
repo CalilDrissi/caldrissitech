@@ -80,13 +80,10 @@ const Catalog = () => {
         <Recent title="coll" type="desktop" />
         <Recent title="coll" type="desktop" />
         <Recent title="coll" type="Android" />
-        <Recent title="coll" type="Full-Stack" />
-        <Recent title="coll" type="Front-End" />
       </BoxSquare>
 
       <BoxRec id="section3">
         <Post title="Scaling" platform="Dev.to" />
-        <Post title="Scaling" platform="Medium" />
         <Post title="Scaling" platform="Medium" />
       </BoxRec>
 
