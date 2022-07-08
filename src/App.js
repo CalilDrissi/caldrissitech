@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import Hero from "./sections/Hero";
 import Catalog from "./sections/Catalog";
-import Pop from "./components/Pop";
+import Pop from "./sections/Pop";
 import { useState } from "react";
 
 const GlobalStyle = createGlobalStyle`
@@ -50,6 +50,15 @@ const Main = styled.main`
     grid-template-rows: 50vh auto;
   }
 `;
+
+
+
+
+
+
+
+
+
 
 function App() {
   const [open, setOpen] = useState(false);
