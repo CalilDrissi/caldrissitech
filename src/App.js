@@ -21,12 +21,12 @@ body::-webkit-scrollbar {
   display: none;
 
 }
-  body{
+body{
     position:relative ;
     background: #121212;
     color: #fff ;
     font-family: Kanit;
-  }
+}
 
 `;
 
@@ -50,15 +50,6 @@ const Main = styled.main`
     grid-template-rows: 50vh auto;
   }
 `;
-
-
-
-
-
-
-
-
-
 
 function App() {
   const [open, setOpen] = useState(false);
